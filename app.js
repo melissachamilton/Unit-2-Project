@@ -11,7 +11,7 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/user', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost/users', { useNewUrlParser: true })
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
