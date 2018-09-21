@@ -14,9 +14,17 @@ router.get('/', function(req, res, next) {
 router.get('/:id', (req, res) => {
   User.findById(req.params.id)
   .then((user) => {
-    res.send(user)
     res.render('users/show',{user})
   })
 })
+
+// Create
+router.post('/', (req, res) => {
+   User.create(req.body)
+   .then((user) => {
+    res.send(user)
+     })
+  })
+  
 
 module.exports = router;

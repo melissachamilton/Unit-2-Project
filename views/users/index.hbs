@@ -3,8 +3,8 @@
 <div>
     <button>Create a Profile</button>
   {{#each users}}
-  <div>Username: {{this.username}}, Professional {{this.professional}}</div>
-  <button>View Profile</button>
+  {{!-- <div>Username: {{this.username}}, Professional {{this.professional}}</div> --}}
+  <div>Username: {{this.username}} <a href='/users/{{this._id}}'>View Profile</a></div>
   {{/each}}
 </div> 
 
