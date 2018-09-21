@@ -5,30 +5,42 @@ const Schema = require('./schema')
 
 const { User, Event, Vendor } = Schema
 
-const dj = new Vendor({
+const newVendor = new Vendor({
     type: 'DJ',
     price: 350,
     dueDate: '5/1/19',
 })
 
-const wedding = new Event({
+const newEvent = new Event({
     name: 'Our Wedding Day',
     location: 'Atlanta GA',
     date: '5/31/19',
     time: '7 pm',
     guestCount: 200,
-    vendors: [dj]
+    vendors: [newVendor]
 })
 
-const coordinator = new User({
+const newUser = new User({
     username: 'Carmelita',
     professional: 'yes',
-    events: [wedding]
+    events: [newEvent]
 })
 
-coordinator.save()
-    .then(data => {
-        console.log(data)
-        console.log('Done Seeding!')
-        mongoose.connection.close()
-    })
+const photographer = new Vendor({type: 'photographer', price: 750, dueDate: '3/1/2019'})
+const caterer = new Vendor({type: 'caterer', price: 1500, dueDate: '3/1/2019'})
+const retirement = new Event({name: 'Retirement Party', location: 'Boca Raton FL', date: '3/11/2019', time: '4 pm', guestCount: 50, vendors: [photographer] })
+const birthday = new Event({name: '60th Birthday Party', location: 'Columbus GA', date: '9/30/2018', time: '2 pm', guestCount: 30, vendors: [caterer] })
+const nell = new User({username: 'Nell', professional: 'no', events: [birthday]})
+const al = new User({username: 'Al', professional: 'no', events: [retirement]})
+
+User.insertMany()
+.then(() => {
+    return User.insertMany([nell, al])
+})
+
+// newUser.save()
+//     .then(data => {
+//         console.log(data)
+//         console.log('Done Seeding!')
+//         mongoose.connection.close()
+//     })
