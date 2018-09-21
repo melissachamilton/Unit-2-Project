@@ -1,0 +1,9 @@
+<h1>Showing One Event</h1>
+
+<div>Username: {{user.username}}</div>
+
+<form action='/users/{{user._id}}?_method=DELETE' method='POST'>
+ <input type="submit" value='Delete User'>
+</form>
+
+<a href='/users'/{{user.id}}>Go Back to Users</a>

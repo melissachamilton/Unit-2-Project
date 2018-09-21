@@ -1,0 +1,11 @@
+<h1>All Events <a href='/users/{{userId}}/events/new'>( Add an Event )</a></h1>
+
+<div>
+{{#each events}}
+<div>
+Name: {{this.name}}</div>
+<div>
+<a href='/events/new'>(New)</a>
+</div>
+{{/each}}
+</div> 
