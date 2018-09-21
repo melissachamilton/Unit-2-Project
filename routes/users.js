@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const {User} = require('../db/schema')
+var method = require('method-override')
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -9,6 +10,12 @@ router.get('/', function(req, res, next) {
     res.render('users/index', {users})
   })
 });
+
+// New Form
+    
+router.get('/new', (req, res) => {
+  res.render('users/new')
+})
 
 // Show One
 router.get('/:id', (req, res) => {
@@ -22,9 +29,9 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
    User.create(req.body)
    .then((user) => {
-    res.send(user)
+    res.redirect(`/users/${user._id}`)
      })
   })
-  
 
+  
 module.exports = router;
