@@ -7,11 +7,8 @@ router.get('/',function(req, res, next) {
   User.findById(req.params.userId)
   .then((user) => {
     const events = user.events
-    res.render('events/index',{
-      // userId: req.params.userId,
-      events
+    res.render('events/index',{events
     })
-    // res.render('events/index', {events})
   })
   .catch(error => {
     console.log(error)
