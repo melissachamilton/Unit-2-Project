@@ -6,9 +6,10 @@ var logger = require('morgan');
 var env = require('dotenv').config()
 var method = require('method-override')
 
-var indexRouter = require('./routes');
-var usersRouter = require('./routes/users');
+var indexRouter = require('./routes')
+var usersRouter = require('./routes/users')
 var eventsRouter = require('./routes/events')
+// var vendorsRouter = require('./routes/vendors')
 
 var app = express();
 
@@ -29,6 +30,7 @@ app.use(method('_method'))
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/users/:userId/events', eventsRouter)
+// app.use('/users/:userId/events/:eventId/vendors', vendorsRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,11 +1,15 @@
-<h1>All Events <a href='/users/{{userId}}/events/new'>( Add an Event )</a></h1>
+<h1>All Events</h1>
 
+<a href='/users/{{userId}}/events/new'>( Add an Event )</a>
 <div>
 {{#each events}}
 <div>
 Name: {{this.name}}</div>
+<div>Location: {{this.location}}</div>
+<div>Date: {{this.date}}</div>
 <div>
+ {{!-- <a href='/events/{{event._id}}'>(New)</a>    --}}
+ <div>Name: {{this.name}} <a href='/events/{{this._id}}'>View Details</a></div>
 <a href='/events/new'>(New)</a>
 </div>
 {{/each}}
-</div> 

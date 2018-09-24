@@ -34,7 +34,7 @@ const birthday = new Event({name: '60th Birthday Party', location: 'Columbus GA'
 const wedding = new Event ({name: 'Our Wedding', location: 'Atlanta', date: '5/31/2019', time: '7 pm', guestCount: 200, vendors:[dj]})
 const nell = new User({username: 'Nell', professional: 'no', events: [birthday]})
 const al = new User({username: 'Al', professional: 'no', events: [retirement]})
-const carmelita = new User({username: 'Carmelita', professional: 'yes', events: [wedding]})
+const carmelita = new User({username: 'Carmelita', professional: 'yes', events: [wedding, birthday, retirement]})
 
 User.deleteMany()
 .then(()=> {
