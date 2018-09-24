@@ -1,5 +1,7 @@
 body {
-  background-color: red;
+  background-color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: red;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }

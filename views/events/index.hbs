@@ -2,7 +2,7 @@
 
 <a href='/users/{{userId}}/events/new'>Add an Event</a>
 <div>
-{{#each event}}
+{{#each events}}
 
 <div>Name: {{this.name}}<a href='/users/{{../userId}}/events/{{this._id}}'>View Details</a></div>
 <div>Location: {{this.location}}</div>
