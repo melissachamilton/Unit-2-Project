@@ -1,18 +1,22 @@
 var express = require('express');
 var router = express.Router();
-const {User} = require('../db/schema')
+const {
+  User
+} = require('../db/schema')
 var method = require('method-override')
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   User.find()
-  .then((users) => {
-    res.render('users/index', {users})
-  })
+    .then((users) => {
+      res.render('users/index', {
+        users
+      })
+    })
 });
 
 // New Form
-    
+
 router.get('/new', (req, res) => {
   res.render('users/new')
 })
@@ -20,44 +24,50 @@ router.get('/new', (req, res) => {
 // EDIT, RENDER EDIT FORM
 router.get('/:id/edit', (req, res) => {
   User.findById(req.params.id)
-  .then((user) => {
-       res.render('users/edit', { user })
-     })
-  })
+    .then((user) => {
+      res.render('users/edit', {
+        user
+      })
+    })
+})
 
 // Show One
 router.get('/:id', (req, res) => {
   User.findById(req.params.id)
-  .then((user) => {
-    res.render('users/show',{user})
-  })
+    .then((user) => {
+      res.render('users/show', {
+        user
+      })
+    })
 })
 
 // Create
 router.post('/', (req, res) => {
-   User.create(req.body)
-   .then((user) => {
-    res.redirect(`/users/${user._id}`)
-     })
-  })
+  User.create(req.body)
+    .then((user) => {
+      res.redirect('/users')
+    })
+})
 
-  // UPDATE
+// UPDATE
 router.put('/:id', (req, res) => {
   User.findByIdAndUpdate(req.params.id, req.body)
-  .then((user) => {
-   res.redirect(`/users/${user._id}`)
-   })
-  })
+    .then((user) => {
+      res.redirect('/users/index', {
+        users
+      })
+    })
+})
 
 
-  // Delete
-  router.delete('/:id', (req, res) => {
-    User.findByIdAndRemove(req.params.id)
-     .then(() => {
-     res.redirect('/users')
-   })
-  })
-    
+// Delete
+router.delete('/:id', (req, res) => {
+  User.findByIdAndRemove(req.params.id)
+    .then(() => {
+      res.redirect('/users')
+    })
+})
 
-  
+
+
 module.exports = router;
