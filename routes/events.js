@@ -8,7 +8,9 @@ router.get('/',function(req, res, next) {
   User.findById(req.params.userId)
   .then((user) => {
     const events = user.events
-    res.render('events/index',{events
+    res.render('events/index',{
+      events,
+      userId: req.params.userId
     })
   })
   .catch(error => {
@@ -18,18 +20,22 @@ router.get('/',function(req, res, next) {
 
 // // New Form
     
-router.get('events/new', (req, res) => {
-  res.send ("New event form works")
-  // res.render('events/new')
-})
+// router.get('events/new', (req, res) => {
+//   res.send ("New event form works")
+//   // res.render('events/new')
+// })
 
 // Show One
 router.get('/:id', (req, res) => {
   User.findById(req.params.userId)
   .then((user) => {
-    // const events = event.vendors
-    res.send(user.events.id(req.params.id)
+    // res.send(event)
+    // userId = req.params.userId
+    res.render('events/show', {
+      event: user.events.id(req.params.eventId),
+      userId: req.params.userId
   })
+})
 })
 
 // // Create
@@ -50,4 +56,4 @@ router.get('/:id', (req, res) => {
     
 
   
-module.exports = router;
+module.exports = router

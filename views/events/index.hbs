@@ -1,6 +1,6 @@
 <h1>All Events</h1>
 
-<a href='/users/{{userId}}/events/new'>( Add an Event )</a>
+<a href='/users/{{userId}}/events/new'>Add an Event</a>
 <div>
 {{#each events}}
 <div>
@@ -8,8 +8,11 @@ Name: {{this.name}}</div>
 <div>Location: {{this.location}}</div>
 <div>Date: {{this.date}}</div>
 <div>
- {{!-- <a href='/events/{{event._id}}'>(New)</a>    --}}
- <div>Name: {{this.name}} <a href='/events/{{this._id}}'>View Details</a></div>
-<a href='/events/new'>(New)</a>
-</div>
+ {{!-- <a href=/events/{{event._id}}'>(New)</a>    --}}
+ {{!-- <div>Name: {{this.name}} <a href='/users/{{../userId}}/events/{{this._id}}'>View Details</a></div>
+</div> --}}
+
+{{!-- <form action='/users/{{userId}}/events/{{event._id}}/?_method=DELETE' method='POST'>
+ <input type="submit" value='Delete Event'>
+</form> --}}
 {{/each}}
