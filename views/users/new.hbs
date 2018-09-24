@@ -1,7 +1,17 @@
 <h1>New User</h1>
 
-<form action='/users' method='POST'>
-<div>Username: <input type='text' name='username'></div>
-<div>Professional: <input type='text' name='professional'></div>
+<form action='/users' method='POST'class="pure-form pure-form-stacked">
+<fieldset>
+    {{!-- <legend>A Stacked Form</legend> --}}
+    <label for ='username'>Username</label>
+    <input id='username' type ='username' placeholder = "Username">
+    <span class="pure-form-message">This is a required field.</span>
+
+    <label for ='professional'>Professional</label>
+    <input id='professional' type ='professional' placeholder = "yes or no">
+    <span class="pure-form-message">This is a required field.</span>
+
+{{!-- <div>Username: <input type='text' name='username'></div> --}}
+{{!-- <div>Professional: <input type='text' name='professional'></div> --}}
 <div><input type='submit' value='Create New User'></div>
 </form>
