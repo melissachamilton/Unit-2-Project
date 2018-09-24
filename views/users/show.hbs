@@ -1,9 +1,11 @@
 <h1>Showing One User</h1>
 
 <div>Username: {{user.username}}</div>
+<dive>Professional: {{user.professional}}</dive>
 <form action='/users/{{user._id}}?_method=DELETE' method='POST'>
  <input type="submit" value='Delete User'>
 </form>
 
-<a href='/users/{{user._id}}/events'>View Upcoming Events</a>
+<div><a href='/users/{{user._id}}/events'>View Upcoming Events</a></div>
+<div><a href='/users/{{user._id}}/edit'>Update Profile</a></div>
 <a href='/users'>Go Back to Users</a>
