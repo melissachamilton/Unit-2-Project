@@ -1,13 +1,13 @@
 <h1>Showing One Event</h1>
 
-<div>Name:{{event.name}}</div>
+<div>Name: {{'event.name'}}</div>
 <div>Location:{{event.location}}</div>
 <div>Date: {{event.date}}</div>
 <div>Time: {{event.time}}</div>
 <div>Guest Count: {{event.guestCount}}</div>
 <div>Vendors: {{event.vendors}}</div>
 
-<form action='/users/{{userId}}/events/{{events_id}}/?_method=DELETE' method='POST'>
+<form action='/users/{{userId}}/events/{{events._id}}/?_method=DELETE' method='POST'>
  <input type="submit" value='Delete Event'>
 </form>
 

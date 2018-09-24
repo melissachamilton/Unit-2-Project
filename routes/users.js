@@ -28,6 +28,7 @@ router.get('/:id/edit', (req, res) => {
       res.render('users/edit', {
         user
       })
+      // res.redirect('/users')
     })
 })
 
@@ -52,10 +53,16 @@ router.post('/', (req, res) => {
 // UPDATE
 router.put('/:id', (req, res) => {
   User.findByIdAndUpdate(req.params.id, req.body)
-    .then((user) => {
-      res.redirect('/users/index', {
-        users
-      })
+    .then((userFromDB) => {
+      // const userId = userFromDB._id
+      // console.log("HERES MY USER", userFromDB)
+      // console.log("HERES MY USER ID", userId)
+      res.redirect(`/users/${userFromDB._id}`)
+      // res.redirect('/users/' + userFromDB._id)
+      // res.redirect(`/users/${userFromDB._id}/events/${events._id}/venders/${vender._id}`)
+    })
+    .catch(error => {
+      console.log(error)
     })
 })
 
