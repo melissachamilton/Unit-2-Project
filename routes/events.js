@@ -29,11 +29,13 @@ router.get('/',function(req, res, next) {
 router.get('/:id', (req, res) => {
   User.findById(req.params.userId)
   .then((user) => {
+    // const showevent = user.events.id(req.params.eventId)
     // res.send(event)
     // userId = req.params.userId
     res.render('events/show', {
-      event: user.events.id(req.params.eventId),
-      userId: req.params.userId
+      userId: req.params.userId,
+      event: user.events.id(req.params.eventId)
+      // userId: req.params.userId
   })
 })
 })

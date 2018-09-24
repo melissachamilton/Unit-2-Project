@@ -1,5 +1,6 @@
 body {
   background-color: black;
+  text-align: center;
   font-family: Georgia, 'Times New Roman', Times, serif;
   color: red;
   padding: 50px;
@@ -7,5 +8,13 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: gold;
 }
+
+quote {
+  font-family: French Script;
+  color: purple
+}
+
+
+

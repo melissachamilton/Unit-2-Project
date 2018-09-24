@@ -1,11 +1,13 @@
-<h1>Showing One Event</h1>
+<h1>{{event.name}}</h1>
 
+{{!-- {{#each event}} --}}
 <div>Name: {{event.name}}</div>
-<div>Location:{{event.location}}</div>
-<div>Date: {{event.date}}</div>
-<div>Time: {{event.time}}</div>
-<div>Guest Count: {{event.guestCount}}</div>
-<div>Vendors: {{event.vendors}}</div>
+<div>Location:{{this.location}}</div>
+<div>Date: {{this.date}}</div>
+<div>Time: {{this.time}}</div>
+<div>Guest Count: {{this.guestCount}}</div>
+<div>Vendors: {{this.vendors}}</div>
+{{!-- {{/each}} --}}
 
 <form action='/users/{{userId}}/events/{{events._id}}/?_method=DELETE' method='POST'>
  <input type="submit" value='Delete Event'>
