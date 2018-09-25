@@ -56,12 +56,16 @@ router.post('/events', (req, res) => {
   })
 
 //   // Delete
-//   router.delete('/:id', (req, res) => {
-//     User.findByIdAndRemove(req.params.id)
-//      .then(() => {
-//      res.redirect('/users')
-//    })
-//   })
+  router.delete('/:id', (req, res) => {
+    User.findById(req.params.userId)
+     .then((user) => {
+       user.events.remove(req.params.id)
+       return user.save()
+     })
+       .then(() => {
+     res.redirect(`/users/${req.params.userId}/events`)
+   })
+  })
     
 
   

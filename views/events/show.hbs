@@ -6,8 +6,9 @@
 <div>Guest Count: {{event.guestCount}}</div>
 {{!-- <div>Vendors: <button>View Details</button> --}}
 
-<form action='/users/{{userId}}/events/{{events._id}}/?_method=DELETE' method='POST'>
+<form action='/users/{{userId}}/events/{{event._id}}/?_method=DELETE' method='POST'>
  <input type="submit" value='Delete Event'>
 </form>
+
 
 {{!-- <div><a href='/users/{{userId}}/events/{{events_id}}/edit'>Edit Band</a></div> --}}
