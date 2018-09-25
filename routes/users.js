@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const { User } = require('../db/schema.js')
+const { User } = require('../db/schema')
 var method = require('method-override')
 
 
