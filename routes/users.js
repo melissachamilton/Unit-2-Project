@@ -3,6 +3,7 @@ var router = express.Router();
 const { User } = require('../db/schema.js')
 var method = require('method-override')
 
+
 /* GET users listing. */
 router.get('/', function (req, res, next) {
   User.find()
