@@ -27,4 +27,3 @@ Utilizing:
 ![ERD](./public/images/ERD.jpg)
 
 
-
