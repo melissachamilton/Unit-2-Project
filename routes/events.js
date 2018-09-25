@@ -20,18 +20,25 @@ router.get('/',function(req, res, next) {
 
 // // New Form
     
-// router.get('events/new', (req, res) => {
-//   res.send ("New event form works")
-//   // res.render('events/new')
+router.get('/new', (req, res) => {
+  // res.send ("New event form works")
+  res.render('events/new')
+})
+// EDIT, RENDER EDIT FORM
+// router.get('/:id/edit', (req, res) => {
+//   User.findById(req.params.id)
+//     .then((user) => {
+//       res.render('events/edit', {
+//         user
+//       })
+//       // res.redirect('/users')
+//     })
 // })
 
 // Show One
 router.get('/:id', (req, res) => {
   User.findById(req.params.userId)
   .then((user) => {
-    // const showevent = user.events.id(req.params.eventId)
-    // res.send(event)
-    // userId = req.params.userId
     res.render('events/show', {
       userId: req.params.userId,
       event: user.events.id(req.params.eventId)
@@ -41,12 +48,12 @@ router.get('/:id', (req, res) => {
 })
 
 // // Create
-// router.post('/', (req, res) => {
-//    User.create(req.body)
-//    .then((user) => {
-//     res.redirect(`/users/${user._id}`)
-//      })
-//   })
+router.post('/events', (req, res) => {
+   User.create(req.body)
+   .then((user) => {
+    res.redirect(`/users/${user._id}/events`)
+     })
+  })
 
 //   // Delete
 //   router.delete('/:id', (req, res) => {

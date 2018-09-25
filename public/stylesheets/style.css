@@ -7,6 +7,10 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+button{
+  color: black;
+}
+
 a {
   color: gold;
 }
