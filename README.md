@@ -22,7 +22,9 @@ Utilizing:
 
 <h1>Wireframe</h1>
 
-<div></div><img src = "/images/Unit 2 Wireframe.jpg" alt= "Wireframe" /></div>
+![Wireframe](/public/images/Unit 2 Wireframe.jpg)
+
+<img src = "/images/Unit 2 Wireframe.jpg" alt= "Wireframe" />
 
 <h1>ERD</h1>
 
