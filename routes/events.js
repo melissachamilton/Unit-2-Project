@@ -41,7 +41,7 @@ router.get('/:id', (req, res) => {
   .then((user) => {
     res.render('events/show', {
       userId: req.params.userId,
-      event: user.events.id(req.params.eventId)
+      event: user.events.id(req.params.id)
       // userId: req.params.userId
   })
 })
