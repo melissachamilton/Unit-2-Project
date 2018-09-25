@@ -37,10 +37,13 @@ const al = new User({username: 'Al', professional: 'no', events: [retirement]})
 const carmelita = new User({username: 'Carmelita', professional: 'yes', events: [wedding, birthday, retirement]})
 
 User.deleteMany()
-.then(()=> {
-return User.insertMany([nell, al, carmelita])
-mongoose.connection.close()
-})
+    .then(()=> {
+        return User.insertMany([nell, al, carmelita])
+    })
+    .then(()=> {
+        console.log('seeded, closing connection')
+        mongoose.connection.close()
+    })
 
 // newUser.save()
 //     .then(data => {
