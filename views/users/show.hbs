@@ -2,10 +2,12 @@
 
 <div>Username: {{user.username}}</div>
 <div>Professional: {{user.professional}}</div>
-<form action='/users/{{user._id}}?_method=DELETE' method='POST'>
- <input type="submit" value='Delete User'>
-</form>
+
 
 <div><a href='/users/{{user._id}}/events'>View Upcoming Events</a></div>
 <div><a href='/users/{{user._id}}/edit'>Update Profile</a></div>
 <a href='/users'>Go Back to Users</a>
+
+<form action='/users/{{user._id}}?_method=DELETE' method='POST'>
+ <input type="submit" value='Delete User'>
+</form>
