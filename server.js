@@ -1,9 +1,9 @@
+require('dotenv').config()
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var env = require('dotenv').config()
 var method = require('method-override')
 
 var indexRouter = require('./routes')
@@ -14,7 +14,7 @@ var eventsRouter = require('./routes/events')
 var app = express();
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/users', { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI), { useNewUrlParser: true })
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
