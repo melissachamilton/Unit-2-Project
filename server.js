@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -14,7 +14,11 @@ var eventsRouter = require('./routes/events')
 var app = express();
 
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URI), { useNewUrlParser: true })
+if (process.env.MONGODB_URI){
+  mongoose.connect(process.env.MONGODB_URI); //{ useNewUrlParser: true }
+} else {
+  mongoose.connect('mongodb://localhost/users')
+}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
