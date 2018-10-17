@@ -21,19 +21,10 @@ router.get('/',function(req, res, next) {
 // // New Form
     
 router.get('/new', (req, res) => {
-  // res.send ("New event form works")
   res.render('events/new')
 })
 // EDIT, RENDER EDIT FORM
-// router.get('/:id/edit', (req, res) => {
-//   User.findById(req.params.id)
-//     .then((user) => {
-//       res.render('events/edit', {
-//         user
-//       })
-//       // res.redirect('/users')
-//     })
-// })
+// 
 
 // Show One
 router.get('/:id', (req, res) => {
@@ -42,7 +33,6 @@ router.get('/:id', (req, res) => {
     res.render('events/show', {
       userId: req.params.userId,
       event: user.events.id(req.params.id)
-      // userId: req.params.userId
   })
 })
 })
